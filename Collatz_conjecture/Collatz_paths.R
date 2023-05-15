@@ -38,8 +38,8 @@ df_fin = df %>%
          `Starting number` = as.factor(starting)) 
 
 collatz_plot <<- ggplot(data = df_fin, aes(x = step2, y = new_val, group = starting)) +
-  geom_line(alpha = 1/mx) +
-  geom_point(alpha = 1/mx) +
+  geom_line(alpha = .05) +
+  geom_point(alpha = .05) +
   geom_line(data = df_fin %>% filter(starting %in% path),
             aes(x = step2, y = new_val, color = `Starting number`, linetype = `Starting number`),
             lwd = 1.25,alpha=1/length(path)) +
